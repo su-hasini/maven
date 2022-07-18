@@ -1,6 +1,6 @@
 @Library('mylibrary')_
 pipeline
-{i
+{
     agent any
     stages
     {
