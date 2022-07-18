@@ -4,7 +4,7 @@ pipeline
     agent any
     stages
     {
-        stage('Continuous Download_master')
+        stage('Continuous Download')
         {
             steps
             {
@@ -14,7 +14,7 @@ pipeline
                 }
             }
         }
-        stage('ContinuousBuild_master')
+        stage('ContinuousBuild')
         {
             steps
             {
@@ -24,7 +24,7 @@ pipeline
                 }
             }    
         }
-        stage('conti.deploy_master')
+        stage('conti.deploy')
         {
             steps
             {
@@ -34,7 +34,7 @@ pipeline
                 }
             }
         }
-        stage('conti.Testing_master')
+        stage('conti.Testing')
         {
             steps
             {
@@ -45,7 +45,7 @@ pipeline
                 }
             }
         }
-        stage('conti.delivery_master')
+        stage('conti.delivery')
         {
             steps
             {
