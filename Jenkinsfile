@@ -1,10 +1,10 @@
 @Library('mylibrary')_
 pipeline
-{i
+{
     agent any
     stages
     {
-        stage('Continuous Download_master')
+        stage('Continuous Download_test')
         {
             steps
             {
@@ -14,7 +14,7 @@ pipeline
                 }
             }
         }
-        stage('ContinuousBuild_master')
+        stage('ContinuousBuild_test')
         {
             steps
             {
@@ -23,37 +23,6 @@ pipeline
                     cicd.newMaven()
                 }
             }    
-        }
-        stage('conti.deploy_master')
-        {
-            steps
-            {
-                script
-                {
-                    cicd.newDeploy("sharedlibrarywithdeclarativepipeline","172.31.86.200","testapp")
-                }
-            }
-        }
-        stage('conti.Testing_master')
-        {
-            steps
-            {
-                script
-                {
-                    cicd.newGit("https://github.com/su-hasini/functionaltesting.git")
-                    cicd.runSelenium("sharedlibrarywithdeclarativepipeline")
-                }
-            }
-        }
-        stage('conti.delivery_master')
-        {
-            steps
-            {
-                script
-                {
-                    cicd.newDeploy("sharedlibrarywithdeclarativepipeline","172.31.86.63","prodapp")
-                }
-            }
         }
     }
 }
